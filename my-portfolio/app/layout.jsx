@@ -11,10 +11,10 @@ export default function RootLayout({ children }) {
       >
         <div className="container-fluid">
           <div className="row">
-            <div className="col-lg-2 bg-light position-absolute h-100 fixed-top">
+            <div className="col-2 bg-light" style={{height:'100vh'}}>
               <SideBar/>
             </div>
-            <div className="col">
+            <div className="col-10">
               {children}
             </div>
           </div>
