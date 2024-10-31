@@ -1,5 +1,11 @@
 const SideBar = ({}) => {
-  return <div>sidebar</div>
+    const links = [
+        {href:'', title:''}
+    ]
+  return(
+    <>
+    </>
+  )
 }
 
 export default SideBar
