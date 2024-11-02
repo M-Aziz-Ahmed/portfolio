@@ -6,3 +6,12 @@
   padding: 0%;
   margin: 0%;
 }
+.profile{
+  width: 15vw;
+  height: 15vw;
+  overflow: hidden;
+}
+.profile-pic{
+  height: auto !important;
+  width: auto !important;
+}
