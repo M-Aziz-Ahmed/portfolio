@@ -11,7 +11,7 @@ const NavBar = () => {
     { title: 'Profile', link: '#profile' },
     { title: 'Education', link: '#edu' },
     { title: 'Certifications', link: '#cert' },
-    { title: 'Skills', link: '/' },
+    { title: 'Skills', link: '#skills' },
     { title: 'Experience', link: '/' },
   ];
 

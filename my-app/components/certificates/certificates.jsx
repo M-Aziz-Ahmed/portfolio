@@ -27,10 +27,12 @@ const Certificates = ({}) => {
                         <br />
                         <br />
 
-
+                        <hr />
                     </ul>
                 </ul>
             </div>
+            <br />
+            <br />
         </>
     )
 }

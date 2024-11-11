@@ -1,6 +1,7 @@
 import Certificates from "@/components/certificates/certificates";
 import Education from "@/components/education/Education";
 import Profile from "@/components/profile/Profile";
+import Skills from "@/components/skills/Skills";
 import Image from "next/image";
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
     <Profile/>
     <Education/>
     <Certificates/>
+    <Skills/>
     </>
   );
 }
