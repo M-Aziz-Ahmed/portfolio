@@ -38,6 +38,7 @@ const Skills = () => {
           </div>
         ))}
       </div>
+      <hr className="mt-5" />
     </div>
   );
 };
