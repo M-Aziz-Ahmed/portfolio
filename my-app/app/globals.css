@@ -2,20 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Fix the sidebar on the left */
+.fixed-sidebar {
+  position: fixed;
+  /* top: 0; */
+  /* left: 0; */
+  height: 100vh !important;  /* Make the sidebar full-height */
+  overflow-y: auto;
+  z-index: 1000; /* Make sure it stays above the content */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Make the main content area scrollable */
+.main-content {
+  margin-left: 16.66667%;  /* Offset for the sidebar */
+  padding-top: 20px;
+  overflow-y: auto;  /* Allow scrolling in the content area */
+  height: 100vh;  /* Ensure the content takes full viewport height */
+  position: relative;  /* Ensures the content area scrolls independently */
+}
+
+/* Optional: For small screens, you may want to make the sidebar collapsible */
+@media (max-width: 992px) {
+  .fixed-sidebar {
+    width: 100%;  /* Make the sidebar take full width on smaller screens */
+    position: relative;
+  }
+
+  .main-content {
+    margin-left: 0;  /* Remove offset for smaller screens */
+  }
+}
+/* Fix the sidebar on the left */
+.fixed-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;  /* Make the sidebar full-height */
+  overflow-y: auto;  /* Ensure scrolling if the sidebar content overflows */
+  z-index: 1000; /* Make sure it stays above the content */
+}
+
+/* Make the main content area scrollable */
+.main-content {
+  margin-left: 16.66667%;  /* Offset for the sidebar */
+  padding-top: 20px;
+  overflow-y: auto;  /* Allow scrolling in the content area */
+  height: 100vh;  /* Ensure the content takes full viewport height */
+  position: relative;  /* Ensures the content area scrolls independently */
+}
+
+/* Optional: For small screens, you may want to make the sidebar collapsible */
+@media (max-width: 992px) {
+  .fixed-sidebar {
+    width: 100%;  /* Make the sidebar take full width on smaller screens */
+    position: relative;
+  }
+
+  .main-content {
+    margin-left: 0;  /* Remove offset for smaller screens */
   }
 }
 
+/* Apply smooth scrolling globally */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
 }
+
