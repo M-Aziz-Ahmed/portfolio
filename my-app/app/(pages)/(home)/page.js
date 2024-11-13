@@ -8,9 +8,10 @@ export default function Home() {
   return (
     <>
     <Profile/>
-    <Education/>
-    <Certificates/>
     <Skills/>
+    {/* expeience */}
+    <Certificates/>
+    <Education/>
     </>
   );
 }

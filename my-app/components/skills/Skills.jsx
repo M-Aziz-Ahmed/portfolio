@@ -1,5 +1,5 @@
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaBootstrap, FaPython } from 'react-icons/fa';  // Font Awesome icons
-import { SiNextdotjs, SiDjango } from 'react-icons/si'; // Other useful icons
+import { SiNextdotjs, SiDjango, SiFigma } from 'react-icons/si'; // Other useful icons
 
 const Skills = () => {
   const skills = [
@@ -10,18 +10,19 @@ const Skills = () => {
     { name: 'Next.js', icon: <SiNextdotjs />, description: 'Building fast, scalable web applications using Next.js.', progress:'70'  },
     { name: 'Bootstrap', icon: <FaBootstrap />, description: 'Responsive web design with Bootstrap.', progress:'90'  },
     { name: 'Django', icon: <SiDjango />, description: 'Backend development with Django and Python.', progress:'70'  },
+    { name: 'Figma', icon: <SiFigma />, description: 'For graphic designing.', progress:'50'  },
   ];
 
   return (
-    <div className="container my-5 text-white">
-      <div className="text-center mb-5">
-        <h1 id="skills" className="display-4">Skills</h1>
+    <div className="container text-white">
+      <div className="mb-5">
+        <h1 id="skills" className="h1">Skill Set</h1>
         <hr className="mb-5" />
       </div>
 
       <div className="row">
         {skills.map((skill, index) => (
-          <div key={index} className="col-md-4 mb-4">
+          <div key={index} className="col-mb-4 col-6 col-lg-3 mb-4">
             <div className="card bg-dark text-white shadow-lg">
               <div className="card-body text-center">
                 <div className="mb-3" style={{ fontSize: '3rem' }}>
