@@ -10,9 +10,10 @@ const NavBar = () => {
   const NavLinks = [
     { title: 'Profile', link: '#profile' },
     { title: 'Skills', link: '#skills' },
-    { title: 'Experience', link: '/' },
+    { title: 'Experience', link: '#exp' },
     { title: 'Certifications', link: '#cert' },
     { title: 'Education', link: '#edu' },
+    { title: 'Contact Me', link: 'https://wa.me/message/VI3BD7PEX4PWF1' },
   ];
 
   const handleLinkClick = (link) => {

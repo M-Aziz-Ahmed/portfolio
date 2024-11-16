@@ -6,7 +6,7 @@ const Certificates = ({ }) => {
                 <ul>
                     <li><div className="h1">Certifications</div></li>
                     <hr className="mb-3" />
-                    <li><div className="h4" id="edu">Web Designing <span className="h6">-- 2 Months</span></div> </li>
+                    <li><div className="h4">Web Designing <span className="h6">-- 2 Months</span></div> </li>
                     <ul>
                         <li><div className="p">House Of Professionals ( HOP ), Joher Town, Lahore</div></li>
                         <br />
@@ -19,7 +19,7 @@ const Certificates = ({ }) => {
                     </ul>
                     <br />
 
-                    <li><div className="h4" id="edu">Web Development <span className="h6">-- 6 Months</span></div> </li>
+                    <li><div className="h4">Web Development <span className="h6">-- 6 Months</span></div> </li>
                     <ul>
                         <li><div className="p">House Of Professionals ( HOP ), Joher Town, Lahore</div></li>
                         <br />
@@ -31,7 +31,7 @@ const Certificates = ({ }) => {
                     </ul>
 
                     <br />
-                    <li><div className="h4" id="edu">Data Science and Machine Learning <span className="h6">-- 6 Months</span></div> </li>
+                    <li><div className="h4">Data Science and Machine Learning <span className="h6">-- 6 Months</span></div> </li>
                     <ul>
                         <li><div className="p">From Ideoversity, Arfa Kareem Tower, Lahore</div></li>
                         <br />
