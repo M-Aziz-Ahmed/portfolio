@@ -6,7 +6,7 @@ const Education = ({ }) => {
                     <li><div className="h1">EDUCATION</div></li>
                     <hr className="mb-5" />
                     <ul>
-                        <li><div className="h3">Matriculation In Science ( Biology)<span className="h6">--2020 - 2022</span></div> </li>
+                        <li><div className="h3">Matriculation In Science ( Biology )<span className="h6">--2020 - 2022</span></div> </li>
                         <ul>
                             <li><div className="p">Divisional Public School ( DPS ) Model Town, Lahore</div></li>
                         </ul>
