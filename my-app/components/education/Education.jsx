@@ -1,38 +1,76 @@
-const Education = ({ }) => {
-    return (
-        <>
-            <div className="container my-5 text-white" id="edu">
-                <ul>
-                    <li><div className="h1">EDUCATION</div></li>
-                    <hr className="mb-5" />
-                    <ul>
-                        <li><div className="h3">Matriculation In Science ( Biology )<span className="h6">--2020 - 2022</span></div> </li>
-                        <ul>
-                            <li><div className="p">Divisional Public School ( DPS ) Model Town, Lahore</div></li>
-                        </ul>
-                        <br />
-                        <br />
+'use client'
+import { useState } from 'react';
 
-                        <li><div className="h3" id="edu">Intermediate of Computer Science ( ICS )<span className="h6">--2022 - 2024</span></div> </li>
-                        <ul>
-                            <li><div className="p">Government Collage of Science ( GCS ), Wahdat Road, Lahore</div></li>
-                        </ul>
-                        <br />
-                        <br />
+const Education = () => {
+  const [selectedEducation, setSelectedEducation] = useState(null);
 
-                        <li><div className="h3" id="edu">Bachelor of Business & Information Technology ( BBIT )<span className="h6">--First Semester</span></div> </li>
-                        <ul>
-                            <li><div className="p">VU, Lahore</div></li>
-                        </ul>
-                       
+  const educationList = [
+    {
+      title: 'Matriculation In Science (Biology)',
+      duration: '2020 - 2022',
+      institute: 'Divisional Public School (DPS) Model Town, Lahore',
+    },
+    {
+      title: 'Intermediate of Computer Science (ICS)',
+      duration: '2022 - 2024',
+      institute: 'Government College of Science (GCS), Wahdat Road, Lahore',
+    },
+    {
+      title: 'Bachelor of Business & Information Technology (BBIT)',
+      duration: 'First Semester',
+      institute: 'VU, Lahore',
+    }
+  ];
 
-                    </ul>
-                    <hr className="my-5"/>
-                </ul>
+  // Function to open the modal
+  const openModal = (education) => {
+    setSelectedEducation(education);
+  };
+
+  // Function to close the modal
+  const closeModal = () => {
+    setSelectedEducation(null);
+  };
+
+  return (
+    <>
+      <div className="container text-white my-5" id="edu">
+        <h1 className="text-center mb-5">EDUCATION</h1>
+        <hr className="mb-5" />
+
+        <div className="row g-4">
+          {educationList.map((edu, index) => (
+            <div key={index} className="col-md-6 col-lg-4">
+              <div
+                className="card bg-dark text-white shadow-sm rounded-lg overflow-hidden clickable-card"
+                onClick={() => openModal(edu)} // Clicking the education item opens the modal
+              >
+                <div className="card-body text-center py-4">
+                  <h3 className="h4 mb-2">{edu.title}</h3>
+                  {/* <p className="text-muted mb-2">{edu.institute}</p> */}
+                  <span className="d-block mb-3 text-secondary">{edu.duration}</span>
+                </div>
+              </div>
             </div>
-            <br />
-        </>
-    )
-}
+          ))}
+        </div>
+      </div>
 
-export default Education
+      {/* Modal to show the details when clicked */}
+      {selectedEducation && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-box" onClick={(e) => e.stopPropagation()}>
+            <h2 className="text-center mb-4">{selectedEducation.title}</h2>
+            <p className="text-center">{selectedEducation.institute}</p>
+            <p className="text-center text-muted">{selectedEducation.duration}</p>
+            <div className="text-center mt-4">
+              <button onClick={closeModal} className="btn btn-secondary">Close</button>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
+
+export default Education;

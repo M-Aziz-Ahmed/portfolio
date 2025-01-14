@@ -1,63 +1,117 @@
-import Image from "next/image"
-import Link from "next/link"
-const Experience = ({ }) => {
-    return (
-        <>
-            <div className="container text-white" id="exp">
-                <ul>
-                    <li><div className="h1">Experience</div></li>
-                    <hr className="mb-3" />
-                    <li><div className="h4">Web Developer <span className="h6">-- For 1 year</span></div> </li>
-                    <ul>
-                        <li><div className="p">Oxibit Technologies , DHA Phase 2, Lahore</div></li>
-                        <li>
-                            <br />
-                            <div className="cer btn btn-outline-secondary" style={{ width: 'fit-content' }}>
-                                <Link href={'https://www.linkedin.com/company/oxibit'} className="nav-link">Check Out There Linkedin</Link>
-                            </div>
-                        </li>
+'use client'
+import { useState } from 'react';
+import Image from "next/image";
+import Link from "next/link";
+import { FaSuitcase, FaCss3Alt, FaJs, FaReact, FaLinkedin } from 'react-icons/fa'; 
+import { SiNextdotjs, SiDjango, SiFigma, SiFiverr, SiDiscord } from 'react-icons/si';
 
-                    </ul>
-                    <br />
+const Experience = () => {
+  const [selectedExperience, setSelectedExperience] = useState(null);
 
-                    <li><div className="h4" >Web designing <span className="h6">for 6 Months</span></div> </li>
-                    <ul>
-                        <li><div className="p">intern at House Of Professionals ( HOP ), Joher Town, Lahore</div></li>
-                    </ul>
+  const experience = [
+    { 
+      title: 'Web Developer', 
+      icon: <FaSuitcase />, 
+      address: 'Oxibit Technologies, DHA Phase 2, Lahore.', 
+      duration: '1 year', 
+      link: 'https://www.linkedin.com/company/oxibit',
+      linkIcon: <FaLinkedin />,
+      imageSrc: null
+    },
+    {
+      title: 'Web Designing', 
+      icon: <FaCss3Alt />, 
+      address: 'House Of Professionals (HOP), Johar Town, Lahore', 
+      duration: '6 months',
+      link: '',
+      linkIcon: null,
+      imageSrc: null
+    },
+    {
+      title: 'Freelance',
+      icon: <SiFiverr />,
+      address: 'Freelance Project',
+      duration: '1 project (live)',
+      link: 'https://www.medecose.com/',
+      linkIcon: null,
+      imageSrc: '/project1.png'
+    },
+    {
+      title: 'Online Teaching',
+      icon: <SiDiscord />,
+      address: 'Discord Community',
+      duration: 'almost 100 students',
+      link: 'https://discord.gg/cAb8ej98NV',
+      linkIcon: null,
+      imageSrc: null
+    }
+  ];
 
-                    <br />
-                    <li>
-                        <div className="h4">Freelance <span className="h6">-- 1 project ( live )</span></div>
-                    </li>
-                    <ul>
-                        <li>
-                            <div className="p">Check out my live project here</div>
-                            <br />
-                            <div className="cer " style={{ width: 'fit-content' }}>
-                                <Image src={'/project1.png'} width={650} height={650} alt="medecose"></Image>
-                            </div>
-                            <br />
-                            <Link href={'https://www.medecose.com/'} className="btn btn-outline-secondary cer" style={{ width: 'fit-content' }} target="blank">medecose</Link>
-                        </li>
-                    </ul>
-                    <br />
-                    <li><div className="h4">Online Teaching <span className="h6">-- almost 100 students</span></div> </li>
-                    <ul>
-                        <li>
-                            <div className="p">check out my discord channel</div>
-                            <br />
-                            <div className="cer btn btn-outline-secondary" style={{ width: 'fit-content' }}>
-                                <Link href={'https://discord.gg/cAb8ej98NV'} className="nav-link" target="blank">Yui's Community</Link>
-                            </div>
-                        </li>
-                    </ul>
-                    <hr />
-                </ul>
+  // Function to open the modal
+  const openModal = (exp) => {
+    setSelectedExperience(exp);
+  };
+
+  // Function to close the modal
+  const closeModal = () => {
+    setSelectedExperience(null);
+  };
+
+  return (
+    <>
+      <div className="container text-white py-5" id="exp">
+        <h1 className="text-center mb-5">Experience</h1>
+        <hr className="mb-5" />
+        
+        <div className="row g-4">
+          {experience.map((exp, index) => (
+            <div key={index} className="col-md-6 col-lg-4">
+              <div
+                className="card bg-dark text-white shadow-sm rounded-lg overflow-hidden clickable-card"
+                onClick={() => openModal(exp)} // Clicking the card opens the modal
+              >
+                <div className="card-body text-center py-4">
+                  <div className="mb-3" style={{ fontSize: '2.5rem' }}>
+                    {exp.icon}
+                  </div>
+                  <h3 className="h4 mb-2">{exp.title}</h3>
+                  {/* <p className="text-muted mb-2">{exp.address}</p> */}
+                  <span className="d-block mb-3 text-secondary">{exp.duration}</span>
+                </div>
+              </div>
             </div>
-            <br />
-            <br />
-        </>
-    )
-}
+          ))}
+        </div>
+      </div>
 
-export default Experience
+      {/* Modal to show the details when clicked */}
+      {selectedExperience && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-box" onClick={(e) => e.stopPropagation()}>
+            <h2 className="text-center mb-4">{selectedExperience.title}</h2>
+            <p className="text-center">{selectedExperience.address}</p>
+            <p className="text-center text-muted">{selectedExperience.duration}</p>
+            {selectedExperience.imageSrc && (
+              <div className="mt-4 text-center">
+                <Image src={selectedExperience.imageSrc} width={650} height={650} alt="Project Image" className="img-fluid rounded-lg shadow-sm" />
+                <div className="mt-3">
+                  <Link href={selectedExperience.link} className="btn btn-outline-warning cer" target="_blank">Check out live project</Link>
+                </div>
+              </div>
+            )}
+            {selectedExperience.link && !selectedExperience.imageSrc && (
+              <div className="mt-3 text-center">
+                <Link href={selectedExperience.link} className="btn btn-outline-warning cer" target="_blank">Visit</Link>
+              </div>
+            )}
+            <div className="text-center mt-4">
+              <button onClick={closeModal} className="btn btn-secondary">Close</button>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
+
+export default Experience;
