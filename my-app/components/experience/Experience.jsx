@@ -28,6 +28,15 @@ const Experience = () => {
       imageSrc: null
     },
     {
+      title: 'Personal Project', 
+      icon: <SiNextdotjs />, 
+      address: 'MOUSE DPI FINDER', 
+      duration: 'still making it better but it works',
+      link: 'https://mousedpi.vercel.app/',
+      linkIcon: null,
+      imageSrc: null
+    },
+    {
       title: 'Freelance',
       icon: <SiFiverr />,
       address: 'Freelance Project',
@@ -40,7 +49,7 @@ const Experience = () => {
       title: 'Online Teaching',
       icon: <SiDiscord />,
       address: 'Discord Community',
-      duration: 'almost 100 students',
+      duration: 'above 100 students',
       link: 'https://discord.gg/cAb8ej98NV',
       linkIcon: null,
       imageSrc: null
