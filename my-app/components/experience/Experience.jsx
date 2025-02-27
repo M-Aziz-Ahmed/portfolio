@@ -28,11 +28,20 @@ const Experience = () => {
       imageSrc: null
     },
     {
-      title: 'Personal Project', 
+      title: 'Mouse DPI Checker', 
       icon: <SiNextdotjs />, 
       address: 'MOUSE DPI FINDER', 
       duration: 'still making it better but it works',
       link: 'https://mousedpi.vercel.app/',
+      linkIcon: null,
+      imageSrc: null
+    },
+    {
+      title: 'Track The Ball', 
+      icon: <SiNextdotjs />, 
+      address: 'MOUSE DPI FINDER', 
+      duration: 'still making it better but it works',
+      link: 'https://tracktheball.vercel.app/',
       linkIcon: null,
       imageSrc: null
     },
